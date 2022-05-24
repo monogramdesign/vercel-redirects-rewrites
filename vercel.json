@@ -15,8 +15,8 @@
   ],
   "rewrites": [
     {
-      "source": "/raster",
-      "destination": "https://raster.app"
+      "source": "/sample-rewrite",
+      "destination": "/"
     },
     {
       "source": "/",

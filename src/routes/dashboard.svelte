@@ -3,8 +3,8 @@
   <meta name="description" content="Your Home Page" />
 </svelte:head>
 
-<section>
-  <h1 class="text-5xl font-bold mt-8">User Dashboard</h1>
+<section class="prose max-w-none">
+  <h1>🔒 User Dashboard</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
     <div />
     <div />

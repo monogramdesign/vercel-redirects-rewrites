@@ -20,61 +20,90 @@
       cookie = newCookie || "null";
     }
 
-    if (typeof window !== "undefined") {
-      pathname = window.location.pathname;
+    pathname = $page.url.pathname;
 
-      const { routeId } = $page;
-      if (`/${routeId}` !== pathname) {
-        rewriteNotice = true;
-      } else {
-        rewriteNotice = false;
-      }
+    const { routeId } = $page;
+    if (`/${routeId}` !== pathname) {
+      rewriteNotice = true;
+    } else {
+      rewriteNotice = false;
     }
   };
 </script>
 
-<!-- <Header /> -->
+<svelte:head>
+  <meta
+    name="description"
+    content="An example to show how how Vercel conditional rewrites and redirects work"
+  />
+</svelte:head>
 
-<nav
-  class="flex justify-between max-w-screen-lg mx-auto py-4 px-4 flex-col gap-y-5 md:flex-row"
+<header
+  class="flex justify-between items-center container flex-col gap-y-5 md:flex-row border-b mb-8 py-4"
 >
-  <div class="flex gap-x-6 align-middle">
-    <a sveltekit:reload href="/" class="my-auto">
-      <code class:bg-gray-200={$page.routeId === ""}>&#x2f;</code>
+  <!-- Nav -->
+  <nav class="flex gap-x-2">
+    <a
+      sveltekit:reload
+      href="/"
+      class={`font-mono py-1 px-4 rounded ${
+        $page.routeId === ""
+          ? "bg-blue-50 text-blue-500"
+          : "bg-gray-50 text-gray-500"
+      }`}
+    >
+      &#x2f;
     </a>
-    <a href="/dashboard" class="my-auto">
-      <code class:bg-gray-200={$page.routeId === "dashboard"}>/dashboard</code>
+    <a
+      href="/home"
+      class={`font-mono py-1 px-4 rounded ${
+        $page.routeId === "home"
+          ? "bg-blue-50 text-blue-500"
+          : "bg-gray-50 text-gray-500"
+      }`}
+    >
+      /home
     </a>
-    <a href="/home" class="my-auto">
-      <code class:bg-gray-200={$page.routeId === "home"}>/home</code>
+    <a
+      href="/dashboard"
+      class={`font-mono py-1 px-4 rounded ${
+        $page.routeId === "dashboard"
+          ? "bg-blue-50 text-blue-500"
+          : "bg-gray-50 text-gray-500"
+      }`}
+    >
+      /dashboard
     </a>
-  </div>
-  <div class=" flex gap-x-6">
-    <div class="flex flex-col justify-center">
-      <p class="inline">
-        <code>router-setting</code> cookie is set to
+  </nav>
 
-        <select
-          class:text-transparent={cookie === null}
-          value={cookie}
-          on:change={(event) => {
-            setCookie("router-setting", event.currentTarget.value, 10);
-          }}
-          class="code-format !pr-8 border border-gray-200"
-          name="cookie_select"
-          id="cookie_select"
-        >
-          <option value="null">null</option>
-          <option value="redirect">redirect</option>
-          <option value="rewrite">rewrite</option>
-        </select>
-      </p>
-    </div>
-  </div>
-</nav>
+  <!-- Cookie switcher -->
+  <div
+    class="flex items-center gap-x-2 text-sm bg-gray-50 p-1 border border-gray-200 rounded-lg"
+  >
+    <code>router-setting</code> cookie is set to
 
-<main class="max-w-screen-lg mx-auto px-4">
+    <select
+      class:text-transparent={cookie === null}
+      value={cookie}
+      on:change={(event) => {
+        setCookie("router-setting", event.currentTarget.value, 10);
+      }}
+      class="font-mono px-2 py-1 pr-7 border border-gray-300"
+      name="cookie_select"
+      id="cookie_select"
+    >
+      <option value="null">null</option>
+      <option value="redirect">redirect</option>
+      <option value="rewrite">rewrite</option>
+    </select>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="container">
+  <!-- Page content -->
   <slot />
+  <!-- Rewrite notice -->
   {#if rewriteNotice}
     <div
       class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4"
@@ -84,3 +113,9 @@
     </div>
   {/if}
 </main>
+
+<!-- Footer -->
+<footer class="container border-t py-8 mt-8 text-sm text-gray-500">
+  <a href="https://monogram.io" target="_blank">Made by Monogram</a> for
+  <a href="https://vercel.com" target="_blank">&#x25B2; Vercel</a>
+</footer>
