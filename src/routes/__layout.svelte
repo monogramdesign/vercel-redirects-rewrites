@@ -23,7 +23,7 @@
 <svelte:head>
   <meta
     name="description"
-    content="An example to show how how Vercel conditional rewrites and redirects work"
+    content="An example to show how Vercel conditional rewrites and redirects work"
   />
 </svelte:head>
 
