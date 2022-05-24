@@ -39,9 +39,15 @@
   class="flex justify-between max-w-screen-lg mx-auto py-4 px-4 flex-col gap-y-5 md:flex-row"
 >
   <div class="flex gap-x-6 align-middle">
-    <a sveltekit:reload href="/" class="my-auto"><code>&#x2f;</code></a>
-    <a href="/dashboard" class="my-auto"><code>/dashboard</code></a>
-    <a sveltekit:reload href="/home" class="my-auto"><code>/home</code></a>
+    <a sveltekit:reload href="/" class="my-auto">
+      <code class:bg-gray-200={$page.routeId === ""}>&#x2f;</code>
+    </a>
+    <a href="/dashboard" class="my-auto">
+      <code class:bg-gray-200={$page.routeId === "dashboard"}>/dashboard</code>
+    </a>
+    <a sveltekit:reload href="/home" class="my-auto">
+      <code class:bg-gray-200={$page.routeId === "home"}>/home</code>
+    </a>
   </div>
   <div class=" flex gap-x-6">
     <div class="flex flex-col justify-center">
