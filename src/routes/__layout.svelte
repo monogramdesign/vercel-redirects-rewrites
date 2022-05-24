@@ -96,9 +96,8 @@
     <div
       class="rounded-lg border-2 border-green-100 text-green-700 bg-green-50 text-sm mb-8 p-4"
     >
-      <strong>It works!</strong>
-      This page <code>{$page.url.pathname}</code> was rewritten from the
-      original route
+      <strong>The rewrite works!</strong>
+      You're on <code>{$page.url.pathname}</code> but see the contents of
       <code>/{$page.routeId}</code>
     </div>
   {/if}
