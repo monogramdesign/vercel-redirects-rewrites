@@ -1,0 +1,33 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/dashboard",
+      "permanent": false,
+      "has": [
+        {
+          "type": "cookie",
+          "key": "router-setting",
+          "value": "redirect"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/home",
+      "destination": "/"
+    },
+    {
+      "source": "/",
+      "destination": "/dashboard",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "router-setting",
+          "value": "rewrite"
+        }
+      ]
+    }
+  ]
+}

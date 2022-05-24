@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+select {
+    appearance: none;
+    outline: none;
+}
+
+code {
+    @apply bg-gray-100 rounded-sm py-1 px-2 font-mono text-sm ml-1
+}
+
+.bg-gray-50 code  {
+    @apply bg-gray-200
+}
+.code-format {
+    @apply bg-transparent rounded-sm py-1 px-2 font-mono text-sm ml-1
+}
