@@ -91,9 +91,6 @@
 
 <!-- Main -->
 <main class="container">
-  <!-- Page content -->
-  <slot />
-
   <!-- Rewrite notice -->
   {#if `/${$page.routeId}` !== $page.url.pathname}
     <div
@@ -104,6 +101,8 @@
       <code>/{$page.routeId}</code>.
     </div>
   {/if}
+  <!-- Page content -->
+  <slot />
 </main>
 
 <!-- Footer -->
