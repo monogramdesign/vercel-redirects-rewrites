@@ -7,7 +7,7 @@
       "has": [
         {
           "type": "cookie",
-          "key": "router-setting",
+          "key": "my-router-cookie",
           "value": "redirect"
         }
       ]
@@ -24,7 +24,7 @@
       "has": [
         {
           "type": "cookie",
-          "key": "router-setting",
+          "key": "my-router-cookie",
           "value": "rewrite"
         }
       ]

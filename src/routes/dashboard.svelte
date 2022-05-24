@@ -2,7 +2,7 @@
   <title>ACME Dashboard</title>
 </svelte:head>
 
-<section class="prose max-w-none">
+<section class="prose text-sm max-w-none">
   <h1>🔒 User Dashboard</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
     <div />

@@ -3,42 +3,90 @@
 </svelte:head>
 
 <section
-  class="prose prose-code:after:content-none prose-code:before:content-none prose-code:font-medium prose-code:bg-pink-50 prose-code:text-pink-500"
+  class="prose max-w-none text-sm prose-code:after:content-none prose-code:before:content-none prose-code:font-medium prose-code:bg-pink-50 prose-code:text-pink-500 md:flex md:gap-x-8"
 >
-  <h1>🏠 Home</h1>
-  <p>
-    Hi! This is your publicly accessible home page. It can be accessed by both
-    the <code class="!bg-gray-50 !text-gray-500">/</code> and
-    <code class="!bg-gray-50 !text-gray-500">/home</code> routes. Based on your
-    cookie, Vercel can forward you to your logged-in
-    <code class="!bg-gray-50 !text-gray-500">/dashboard</code> via either a redirect
-    or a rewrite.
-  </p>
-  <div class="bg-gray-50 px-8 pb-6 rounded-lg border">
-    <h2>How does this work?</h2>
+  <div>
+    <h1>🏠 Home</h1>
     <p>
-      Change the <code>router-setting</code> cookie above. In each of these cases,
-      there is no flash of unstyled content or a blank page. It just works.
+      Hello! This is a publicly accessible home page. <br />It can be accessed
+      by both the <code class="!bg-gray-50 !text-gray-500">/</code> and
+      <code class="!bg-gray-50 !text-gray-500">/home</code> paths. By simply
+      setting a cookie, Vercel can take logged-in users to
+      <code class="!bg-gray-50 !text-gray-500">/dashboard</code> using a redirect
+      or a rewrite.
     </p>
-    <ol>
+  </div>
+  <div class="bg-gray-50 px-8 pb-6 rounded-lg border">
+    <h2>How does this demo work?</h2>
+    <p>
+      Change the <code>my-router-cookie</code> cookie in the navbar and navigate
+      around.
+    </p>
+    <div class="pl-4 border-l border-gray-300">
+      <p><strong>When set to:</strong></p>
+      <dl>
+        <dt class="mb-2">
+          <code>null</code>
+        </dt>
+        <dd>
+          the URLs will behave conventionally. Visiting
+          <code>/</code> will show this Home page, and visiting
+          <code>/dashboard</code> will show the Dashboard page.
+          <p class="text-xs text-gray-500">
+            No bueno. This is default behavior but it's not a good user
+            experience because users will have to <a
+              href="https://twitter.com/levelsio/status/1480249526325682179?s=21&t=5q825TJ8skdZ8gK8R4zRyw"
+              target="_blank"
+              >click a link to navigate to their dashboard every time they visit
+              your website</a
+            >.
+          </p>
+        </dd>
+        <dt class="mb-2 pt-4 border-t">
+          <code>redirect</code>
+        </dt>
+        <dd>
+          visiting<code>/</code> redirects to
+          <code>/dashboard</code>
+          <p class="text-xs text-gray-500">
+            Better. This may cause a slight delay while the redirect occurs, but
+            Vercel does it server-side and it's still really fast.
+          </p>
+        </dd>
+        <dt class="mb-2 pt-4 border-t">
+          <code>rewrite</code>
+        </dt>
+        <dd>
+          visiting<code>/</code> shows the contents of
+          <code>/dashboard</code> without changing the URL
+          <p class="text-xs text-gray-500">
+            Best. This creates a seamless experience where visiting acme.com
+            shows the website for public users and the dashboard for logged-in
+            users.
+          </p>
+        </dd>
+      </dl>
+    </div>
+    <h2>How do logged-in users see the home page?</h2>
+    <p>
+      Good question. It would suck to force your users to log out before they
+      can see your website. That's why companies reserve <code>/home</code> as a
+      route for logged-in users. Here are some examples:
+    </p>
+    <ul>
       <li>
-        On <code>redirect</code>, the root URL <code>/</code> will be redirected
-        to <code>/dashboard</code>.
+        <a href="https://vercel.com/home" target="_blank">vercel.com/home</a>
       </li>
       <li>
-        On <code>rewrite</code>, the root URL <code>/</code> will be rewritten
-        to <code>/dashboard</code>.
+        <a href="https://github.com/home" target="_blank">github.com/home</a>
       </li>
-      <li>On <code>null</code>, the URLs will show their default pages.</li>
-    </ol>
-    <h3>GitHub Repo</h3>
-    <a href="https://github.com/monogramdesign/vercel-redirects-rewrites"
-      >View the GitHub repo for this example</a
-    >.
-
-    <h3>Tutorial</h3>
-    <a href="https://monogram.io/blog/vercel-server-side-redirects">
-      See Monogram's tutorial using Vercel</a
-    >.
+      <li>
+        <a href="https://raster.app/home" target="_blank">raster.app/home</a>
+      </li>
+    </ul>
+    <p>
+      This demo has gone ahead and done that, so try clicking <code>/home</code>
+      with a <code>redirect</code> or <code>rewrite</code> cookie set.
+    </p>
   </div>
 </section>
