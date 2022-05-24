@@ -45,7 +45,7 @@
     <a href="/dashboard" class="my-auto">
       <code class:bg-gray-200={$page.routeId === "dashboard"}>/dashboard</code>
     </a>
-    <a sveltekit:reload href="/home" class="my-auto">
+    <a href="/home" class="my-auto">
       <code class:bg-gray-200={$page.routeId === "home"}>/home</code>
     </a>
   </div>
