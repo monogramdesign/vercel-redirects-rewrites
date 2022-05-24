@@ -68,6 +68,7 @@
 </nav>
 
 <main class="max-w-screen-lg mx-auto px-4">
+  <slot />
   {#if rewriteNotice}
     <div
       class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4 mx-2"
@@ -76,5 +77,4 @@
       <code>/{$page.routeId}</code>.
     </div>
   {/if}
-  <slot />
 </main>
