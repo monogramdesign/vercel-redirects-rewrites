@@ -19,6 +19,10 @@
       "destination": "/"
     },
     {
+      "source": "raster",
+      "destination": "https://raster.app"
+    },
+    {
       "source": "/db",
       "destination": "/dashboard",
       "has": [
