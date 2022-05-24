@@ -5,8 +5,8 @@
 // from https://stackoverflow.com/questions/22153080/how-do-i-change-the-select-box-arrow
 select {
   background:
-    linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, rgb(203, 203, 203) 50%),
+    linear-gradient(135deg, rgb(203, 203, 203) 50%, transparent 50%);
   background-position:
     calc(100% - 16px) calc(1em - 2px),
     calc(100% - 11px) calc(1em - 2px),
