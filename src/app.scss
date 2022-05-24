@@ -18,11 +18,10 @@ select {
   background-repeat: no-repeat;
 
   appearance: none;
-
 }
 
 code, .code-format {
-    @apply bg-gray-100 rounded-sm py-1 px-2 font-mono text-sm ml-1
+    @apply bg-gray-100 rounded-sm py-1 px-2 font-mono font-medium text-sm ml-1
 }
 
 .bg-gray-50 code  {
