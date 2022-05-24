@@ -9,11 +9,6 @@
           "type": "cookie",
           "key": "router-setting",
           "value": "redirect"
-        },
-        {
-          "type": "query",
-          "key": "noredirect",
-          "value": "[^1]"
         }
       ]
     }

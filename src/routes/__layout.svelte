@@ -5,7 +5,7 @@
   import { onMount } from "svelte";
 
   import "../app.scss";
-  let cookie: string | "null" = "null";
+  let cookie: string | null = null;
   $: $page, fetchCookie();
 
   let rewriteNotice: boolean = false;
@@ -49,6 +49,7 @@
         <code>router-setting</code> cookie is set to
 
         <select
+          class:text-transparent={cookie === null}
           value={cookie}
           on:change={(event) => {
             setCookie("router-setting", event.currentTarget.value, 10);
