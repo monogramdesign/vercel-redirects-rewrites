@@ -35,7 +35,9 @@
 
 <!-- <Header /> -->
 
-<nav class="flex justify-between max-w-screen-lg mx-auto py-4 px-4">
+<nav
+  class="flex justify-between max-w-screen-lg mx-auto py-4 px-4 flex-col gap-y-5 md:flex-row"
+>
   <div class="flex gap-x-6 align-middle">
     <a sveltekit:reload href="/" class="my-auto"><code>&#x2f;</code></a>
     <a href="/dashboard" class="my-auto"><code>/dashboard</code></a>
@@ -46,22 +48,19 @@
       <p class="inline">
         <code>router-setting</code> cookie is set to
 
-        <code>
-          <select
-            value={cookie}
-            on:change={(event) => {
-              setCookie("router-setting", event.currentTarget.value, 10);
-            }}
-            class="code-format"
-            name="cookie_select"
-            id="cookie_select"
-          >
-            <option value="null">null</option>
-            <option value="redirect">redirect</option>
-            <option value="rewrite">rewrite</option>
-          </select>
-          <label for="cookie_select" class=" text-gray-500">⌵</label>
-        </code>
+        <select
+          value={cookie}
+          on:change={(event) => {
+            setCookie("router-setting", event.currentTarget.value, 10);
+          }}
+          class="code-format !pr-8 border border-gray-200"
+          name="cookie_select"
+          id="cookie_select"
+        >
+          <option value="null">null</option>
+          <option value="redirect">redirect</option>
+          <option value="rewrite">rewrite</option>
+        </select>
       </p>
     </div>
   </div>
@@ -71,7 +70,7 @@
   <slot />
   {#if rewriteNotice}
     <div
-      class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4 mx-2"
+      class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4"
     >
       This page <code>{pathname}</code> was rewritten from the original route
       <code>/{$page.routeId}</code>.
