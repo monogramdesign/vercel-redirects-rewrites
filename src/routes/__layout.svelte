@@ -8,8 +8,6 @@
   let cookie: string | null = null;
   $: $page, fetchCookie();
 
-  let rewriteNotice: boolean = false;
-  let pathname: string | null = null;
   onMount(() => {
     fetchCookie();
   });
@@ -18,15 +16,6 @@
     const newCookie = getCookie("router-setting");
     if (newCookie !== undefined) {
       cookie = newCookie || "null";
-    }
-
-    pathname = $page.url.pathname;
-
-    const { routeId } = $page;
-    if (`/${routeId}` !== pathname) {
-      rewriteNotice = true;
-    } else {
-      rewriteNotice = false;
     }
   };
 </script>
@@ -102,11 +91,13 @@
 <!-- Main -->
 <main class="container">
   <!-- Rewrite notice -->
-  {#if rewriteNotice}
+
+  {#if `/${$page.routeId}` !== $page.url.pathname}
     <div
       class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4"
     >
-      This page <code>{pathname}</code> was rewritten from the original route
+      This page <code>{$page.url.pathname}</code> was rewritten from the
+      original route
       <code>/{$page.routeId}</code>.
     </div>
   {/if}
