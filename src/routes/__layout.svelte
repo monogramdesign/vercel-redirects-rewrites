@@ -94,11 +94,12 @@
   <!-- Rewrite notice -->
   {#if `/${$page.routeId}` !== $page.url.pathname}
     <div
-      class="rounded-lg border-2 border-gray-100 text-gray-600 bg-gray-50 my-4 p-4"
+      class="rounded-lg border-2 border-green-100 text-green-700 bg-green-50 text-sm mb-8 p-4"
     >
+      <strong>It works!</strong>
       This page <code>{$page.url.pathname}</code> was rewritten from the
       original route
-      <code>/{$page.routeId}</code>.
+      <code>/{$page.routeId}</code>
     </div>
   {/if}
   <!-- Page content -->
