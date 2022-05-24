@@ -20,7 +20,7 @@
     },
     {
       "source": "/",
-      "destination": "https://vercel-redirects-rewrites.vercel.app/dashboard",
+      "destination": "https://redirect-rewrite-demo.monogram.dev/dashboard",
       "has": [
         {
           "type": "cookie",
