@@ -23,7 +23,7 @@
       "destination": "https://raster.app"
     },
     {
-      "source": "/db",
+      "source": "/",
       "destination": "https://vercel-redirects-rewrites.vercel.app/dashboard",
       "has": [
         {
