@@ -101,8 +101,6 @@
 
 <!-- Main -->
 <main class="container">
-  <!-- Page content -->
-  <slot />
   <!-- Rewrite notice -->
   {#if rewriteNotice}
     <div
@@ -112,6 +110,9 @@
       <code>/{$page.routeId}</code>.
     </div>
   {/if}
+
+  <!-- Page content -->
+  <slot />
 </main>
 
 <!-- Footer -->
