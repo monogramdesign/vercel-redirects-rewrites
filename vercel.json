@@ -19,7 +19,7 @@
       "destination": "/"
     },
     {
-      "source": "raster",
+      "source": "/raster",
       "destination": "https://raster.app"
     },
     {
