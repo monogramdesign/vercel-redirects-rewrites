@@ -1,6 +1,5 @@
 <svelte:head>
-  <title>User dashboard</title>
-  <meta name="description" content="Your Home Page" />
+  <title>ACME Dashboard</title>
 </svelte:head>
 
 <section class="prose max-w-none">
