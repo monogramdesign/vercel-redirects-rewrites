@@ -9,6 +9,11 @@
           "type": "cookie",
           "key": "router-setting",
           "value": "redirect"
+        },
+        {
+          "type": "query",
+          "key": "noredirect",
+          "value": "[^1]"
         }
       ]
     }
@@ -16,7 +21,7 @@
   "rewrites": [
     {
       "source": "/home",
-      "destination": "https://vercel-redirects-rewrites.vercel.app"
+      "destination": "https://vercel-redirects-rewrites.vercel.app?noredirect=1"
     },
     {
       "source": "/raster",
