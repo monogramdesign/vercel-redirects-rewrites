@@ -12,13 +12,6 @@
   let pathname: string | null = null;
   onMount(() => {
     fetchCookie();
-    const { routeId } = $page;
-    if (`/${routeId}` !== pathname) {
-      rewriteNotice = true;
-    } else {
-      rewriteNotice = false;
-    }
-    // if ($page.routeId)
   });
 
   const fetchCookie = () => {
@@ -29,6 +22,13 @@
 
     if (typeof window !== "undefined") {
       pathname = window.location.pathname;
+
+      const { routeId } = $page;
+      if (`/${routeId}` !== pathname) {
+        rewriteNotice = true;
+      } else {
+        rewriteNotice = false;
+      }
     }
   };
 </script>
