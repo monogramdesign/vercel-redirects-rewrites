@@ -16,7 +16,7 @@
   "rewrites": [
     {
       "source": "/home",
-      "destination": "/"
+      "destination": "https://vercel-redirects-rewrites.vercel.app"
     },
     {
       "source": "/raster",
@@ -24,7 +24,7 @@
     },
     {
       "source": "/db",
-      "destination": "/dashboard",
+      "destination": "https://vercel-redirects-rewrites.vercel.app/dashboard",
       "has": [
         {
           "type": "cookie",
