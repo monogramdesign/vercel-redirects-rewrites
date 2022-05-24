@@ -15,10 +15,6 @@
   ],
   "rewrites": [
     {
-      "source": "/home",
-      "destination": "https://vercel-redirects-rewrites.vercel.app?noredirect=1"
-    },
-    {
       "source": "/raster",
       "destination": "https://raster.app"
     },
