@@ -3,7 +3,7 @@
 </svelte:head>
 
 <section
-  class="prose max-w-none text-sm prose-code:after:content-none prose-code:before:content-none prose-code:font-medium prose-code:bg-pink-50 prose-code:text-pink-500 md:flex md:gap-x-8"
+  class="prose max-w-none text-sm prose-code:after:content-none prose-code:before:content-none prose-code:font-medium prose-code:bg-pink-50 prose-code:text-pink-700 md:flex md:gap-x-8"
 >
   <div>
     <h1>🏠 Home</h1>
@@ -75,13 +75,19 @@
     </p>
     <ul>
       <li>
-        <a href="https://vercel.com/home" target="_blank">vercel.com/home</a>
+        <a href="https://vercel.com/home" target="_blank" class="py-4"
+          >vercel.com/home</a
+        >
       </li>
       <li>
-        <a href="https://github.com/home" target="_blank">github.com/home</a>
+        <a href="https://github.com/home" target="_blank" class="py-4"
+          >github.com/home</a
+        >
       </li>
       <li>
-        <a href="https://raster.app/home" target="_blank">raster.app/home</a>
+        <a href="https://raster.app/home" target="_blank" class="py-4"
+          >raster.app/home</a
+        >
       </li>
     </ul>
     <p>

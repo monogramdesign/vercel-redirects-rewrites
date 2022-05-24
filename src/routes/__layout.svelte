@@ -37,8 +37,8 @@
       href="/"
       class={`font-mono py-1 px-4 rounded ${
         $page.routeId === ""
-          ? "bg-blue-50 text-blue-500"
-          : "bg-gray-50 text-gray-500"
+          ? "bg-blue-50 text-blue-600"
+          : "bg-gray-50 text-gray-600"
       }`}
     >
       &#x2f;
@@ -47,8 +47,8 @@
       href="/home"
       class={`font-mono py-1 px-4 rounded ${
         $page.routeId === "home"
-          ? "bg-blue-50 text-blue-500"
-          : "bg-gray-50 text-gray-500"
+          ? "bg-blue-50 text-blue-600"
+          : "bg-gray-50 text-gray-600"
       }`}
     >
       /home
@@ -57,8 +57,8 @@
       href="/dashboard"
       class={`font-mono py-1 px-4 rounded ${
         $page.routeId === "dashboard"
-          ? "bg-blue-50 text-blue-500"
-          : "bg-gray-50 text-gray-500"
+          ? "bg-blue-50 text-blue-600"
+          : "bg-gray-50 text-gray-600"
       }`}
     >
       /dashboard
@@ -67,7 +67,7 @@
 
   <!-- Cookie switcher -->
   <div
-    class="flex items-center gap-x-2 text-sm bg-gray-50 py-1 px-2 text-gray-400 border border-gray-200 rounded-lg"
+    class="flex items-center gap-x-2 text-sm bg-gray-50 py-1 px-2 text-gray-500 border border-gray-200 rounded-lg"
   >
     Set
     <code>my-router-cookie</code> to
@@ -108,7 +108,7 @@
 
 <!-- Footer -->
 <footer
-  class="container border-t py-8 mt-8 text-sm text-gray-500 flex items-center justify-between"
+  class="container border-t py-8 mt-8 text-sm text-gray-600 flex items-center justify-between"
 >
   <div>
     <a href="https://monogram.io" target="_blank">Made by Monogram</a> for
