@@ -19,7 +19,7 @@
       "destination": "/"
     },
     {
-      "source": "/",
+      "source": "/db",
       "destination": "/dashboard",
       "has": [
         {
