@@ -1,33 +1,33 @@
 {
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/dashboard",
-      "permanent": false,
-      "has": [
-        {
-          "type": "cookie",
-          "key": "my-router-cookie",
-          "value": "redirect"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/sample-rewrite",
-      "destination": "/"
-    },
-    {
-      "source": "/",
-      "destination": "https://redirect-rewrite-demo.monogram.dev/dashboard",
-      "has": [
-        {
-          "type": "cookie",
-          "key": "my-router-cookie",
-          "value": "rewrite"
-        }
-      ]
-    }
-  ]
+	"redirects": [
+		{
+			"source": "/",
+			"destination": "/dashboard",
+			"permanent": false,
+			"has": [
+				{
+					"type": "cookie",
+					"key": "httpOnly",
+					"value": "redirect"
+				}
+			]
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/sample-rewrite",
+			"destination": "/"
+		},
+		{
+			"source": "/",
+			"destination": "https://redirect-rewrite-demo.monogram.dev/dashboard",
+			"has": [
+				{
+					"type": "cookie",
+					"key": "httpOnly",
+					"value": "rewrite"
+				}
+			]
+		}
+	]
 }

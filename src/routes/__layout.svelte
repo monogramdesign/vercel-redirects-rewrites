@@ -1,23 +1,26 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import { browser } from '$app/env'
 
 	import { getCookie, setCookie } from '$lib/cookie'
-	import { onMount } from 'svelte'
 
 	import '../app.scss'
-	let cookie: string | null = null
-	$: $page, fetchCookie()
 
-	onMount(() => {
-		fetchCookie()
-	})
+	let cookie: string = getCookie('my-router-cookie') ?? 'null'
 
-	const fetchCookie = () => {
-		const newCookie = getCookie('my-router-cookie')
-		if (newCookie !== undefined) {
-			cookie = newCookie || 'null'
+	const updateCookies = async () => {
+		const currentCookie = getCookie('my-router-cookie')
+
+		if (currentCookie !== cookie) {
+			setCookie('my-router-cookie', cookie as string)
+
+			if (browser) {
+				await fetch(`/set-http-only-cookie`)
+			}
 		}
 	}
+
+	$: cookie, updateCookies()
 </script>
 
 <svelte:head>
@@ -70,7 +73,7 @@
 			class:text-transparent={cookie === null}
 			value={cookie}
 			on:change={(event) => {
-				setCookie('my-router-cookie', event.currentTarget.value, 10)
+				cookie = event.currentTarget.value
 			}}
 			class="font-mono px-2 py-1 pr-7 border border-gray-300 text-gray-700"
 			name="cookie_select"
