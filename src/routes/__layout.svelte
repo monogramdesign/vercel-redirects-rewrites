@@ -1,16 +1,21 @@
+<script context="module" lang="ts">
+  export function load(a: any) {
+    console.log(a);
+
+    return {
+      props: {},
+    };
+  }
+</script>
+
 <script lang="ts">
   import { page } from "$app/stores";
 
   import { getCookie, setCookie } from "$lib/cookie";
-  import { onMount } from "svelte";
 
   import "../app.scss";
   let cookie: string | null = null;
   $: $page, fetchCookie();
-
-  onMount(() => {
-    fetchCookie();
-  });
 
   const fetchCookie = () => {
     const newCookie = getCookie("my-router-cookie");
@@ -18,6 +23,12 @@
       cookie = newCookie || "null";
     }
   };
+
+  let pathname = $page.url.pathname;
+
+  console.log(pathname);
+
+  fetchCookie();
 </script>
 
 <svelte:head>
@@ -92,6 +103,7 @@
 <!-- Main -->
 <main class="container">
   <!-- Rewrite notice -->
+  Pathname: <code>{$page.url.pathname}</code>
   {#if `/${$page.routeId}` !== $page.url.pathname}
     <div
       class="rounded-lg border-2 border-green-100 text-green-700 bg-green-50 text-sm mb-8 p-4"

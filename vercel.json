@@ -16,7 +16,7 @@
   "rewrites": [
     {
       "source": "/sample-rewrite",
-      "destination": "/"
+      "destination": "/home"
     },
     {
       "source": "/",
