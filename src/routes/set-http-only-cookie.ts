@@ -5,7 +5,7 @@ export async function get({ request }: RequestEvent): Promise<RequestHandlerOutp
 	const cookies = parse(request.headers.get('cookie') ?? '')
 	const headers = new Headers()
 
-	const httpOnlyCookie = serialize('httpOnly', cookies['my-router-cookie'], {
+	const httpOnlyCookie = serialize('my-http-only-cookie', cookies['my-router-cookie'], {
 		httpOnly: true,
 		maxAge: 60 * 60 // 1h
 	})

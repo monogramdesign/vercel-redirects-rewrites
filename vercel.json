@@ -7,7 +7,7 @@
 			"has": [
 				{
 					"type": "cookie",
-					"key": "httpOnly",
+					"key": "my-http-only-cookie",
 					"value": "redirect"
 				}
 			]
@@ -24,7 +24,7 @@
 			"has": [
 				{
 					"type": "cookie",
-					"key": "httpOnly",
+					"key": "my-http-only-cookie",
 					"value": "rewrite"
 				}
 			]
