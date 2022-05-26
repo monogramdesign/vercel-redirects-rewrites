@@ -15,7 +15,7 @@
 			setCookie('my-router-cookie', cookie as string)
 
 			if (browser) {
-				await fetch(`/set-http-only-cookie`)
+				await fetch(`/set-http-only-cookie`, { method: 'POST' })
 			}
 		}
 	}

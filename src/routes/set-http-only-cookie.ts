@@ -1,7 +1,7 @@
 import type { RequestEvent, RequestHandlerOutput } from '@sveltejs/kit/types/internal'
 import { parse, serialize } from 'cookie'
 
-export async function get({ request }: RequestEvent): Promise<RequestHandlerOutput> {
+export async function post({ request }: RequestEvent): Promise<RequestHandlerOutput> {
 	const cookies = parse(request.headers.get('cookie') ?? '')
 	const headers = new Headers()
 
